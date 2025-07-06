@@ -1,4 +1,5 @@
 import numpy as np
+from sklearn.metrics import confusion_matrix
 
 
 def create_data():
@@ -14,3 +15,8 @@ def create_data():
     ])
 
     return y_true_a, y_pred_a
+
+
+def get_cm_ith_cat(i, y_true_a, y_pred_a):
+    cm_i = confusion_matrix(y_true_a[:, i], y_pred_a[:, i])
+    return cm_i
